@@ -14,12 +14,15 @@ RUN apt update \
   && pecl install mongodb \
   && apt install git zip unzip php-zip -y \
   && apt-get install php-mongodb -y \
-  && echo "extension=mongodb.so" >> /etc/php/7.2/cli/php.ini \
+  && apt-get install php7.2-mbstring \
+#  && echo "extension=mongodb.so" >> /etc/php/7.2/cli/php.ini \
   && php --ri mongodb | grep version \
   && mkdir -p /home/user/project \
   && chown 1000:1000 /home/user/project \
   && chmod 777 /home/user/project \
   && rm -rf /var/lib/apt/lists/*
+
+COPY phpruntime.ini /etc/php/7.2/cli/conf.d
 
 WORKDIR /home/user/project
 
