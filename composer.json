@@ -6,7 +6,7 @@
     "require": {
         "php": ">=7.2.5",
         "ext-mbstring": "*",
-	"ext-ctype": "*",
+        "ext-ctype": "*",
         "ext-iconv": "*",
         "ext-json": "*",
         "mongodb/mongodb": "^1.2.0",
@@ -34,7 +34,8 @@
         "preferred-install": {
             "*": "dist"
         },
-        "sort-packages": true
+        "sort-packages": true,
+        "bin-dir": "bin/"
     },
     "autoload": {
         "psr-4": {
@@ -73,6 +74,9 @@
         }
     },
     "require-dev": {
+        "behat/behat": "^3.8",
+        "friends-of-behat/symfony-extension": "^2.1",
         "phpunit/phpunit": "^7"
     }
 }
+
