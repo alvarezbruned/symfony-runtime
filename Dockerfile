@@ -34,7 +34,5 @@ COPY .phpunit.result.cache .
 COPY phpunit.xml.dist .
 COPY symfony.lock .
 
-ENTRYPOINT ["symfony", "server:start", "--no-tls"]
-
-
+ENTRYPOINT ["symfony", "server:start", "--port=80", "--no-tls"]
 
